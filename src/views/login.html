@@ -28,6 +28,7 @@
             text-align: center;
             letter-spacing: 0.2em;
         }
+        
         ul {
             padding: 0;
             margin: 0;
@@ -38,11 +39,39 @@
             color: var(--D);
         }
         a:hover { color: var(--C); }
-        
-        .login button:hover { background-color: var(--C); }
+        .login {
+            height: 110px;
+        }
+
+        .login input {
+            display: block;
+            margin: 20px auto;
+            padding: 0 15px;
+            width: 270px;
+            height: 50px;
+            border: none;
+            font-size: 1em;
+        }
+
+        .login button {
+            color: var(--D);
+            display: block;
+            margin: 0 auto;
+            width: 300px;
+            height: 50px;
+            background-color: var(--B);
+            border: none;
+            font-weight: bolder;
+            font-size: 1em;
+            letter-spacing: 0.1em;
+        }
+
         li {
             display: inline;
             margin: 0 20px;
+        }
+        ul {
+            margin-bottom: 40px;
         }
 
     </style>
@@ -50,7 +79,7 @@
 <body>
     <div class="bg">
         <header>
-            <h1>OAuth Test</h1>
+            <h1>Login Screen</h1>
         </header>
         <nav>
             <ul>
@@ -58,6 +87,12 @@
                 <li><a href="/auth/login">&lt;login&gt;</a></li>
             </ul>
         </nav>
+        <section class="login">
+            <form action="" class="login">
+                <input type="text">
+                <button>login with Google</button>
+            </form>
+        </section>
     </div>
 </body>
 </html>
