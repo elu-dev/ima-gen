@@ -1,8 +1,8 @@
 :root {
-    --A: #f3d4d4;
-    --B: #fc9d9d;
-    --C: #ea728c;
-    --D: #4f3961;
+    --A: #fee8d3;
+    --B: #ff6f73;
+    --C: #948b9a;
+    --D: #263c66;
 }
 
 body {
@@ -29,27 +29,17 @@ ul {
 }
 a {
     text-decoration: none;
-    color: var(--D);
+    color: var(--C);
 }
-a:hover { color: var(--C); }
+a:hover { color: var(--B); }
 .login {
-    height: 110px;
-}
-
-.login input {
-    display: block;
-    margin: 20px auto;
-    padding: 0 15px;
-    width: 270px;
-    height: 50px;
-    border: none;
-    font-size: 1em;
 }
 
 .login button {
-    color: var(--D);
+    /* color: var(--D); */
+    color: rgb(253, 249, 238);
     display: block;
-    margin: 0 auto;
+    margin: 20px auto;
     width: 300px;
     height: 50px;
     background-color: var(--B);
@@ -58,6 +48,7 @@ a:hover { color: var(--C); }
     font-size: 1em;
     letter-spacing: 0.1em;
 }
+.login button:hover { background-color: var(--C); }
 
 li {
     display: inline;
