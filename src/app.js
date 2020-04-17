@@ -19,9 +19,8 @@ app.get('/', (req,res) => {
     res.render('home')
 })
 
-app.get('/profile', passport.authenticate('google', {failureRedirecte:'/'}), (req,res) => {
+app.get('/profile', passport.authenticate('google', {failureRedirecte:'/', scope: 'profile'}), (req,res) => {
     if (!req.user) res.redirect('/')
-    console.log(req.user)
     res.render('profile', {user: req.user })
 })
 
