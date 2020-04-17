@@ -16,6 +16,7 @@ app.use('/api/auth', require('./api/auth.js'))
 
 
 app.get('/', (req,res) => {
+    req.logout()
     res.render('home')
 })
 
