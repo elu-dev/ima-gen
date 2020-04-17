@@ -13,6 +13,7 @@ app.use(express.urlencoded())
 app.use(passport.initialize())
 
 app.use('/api/auth', require('./api/auth.js'))
+app.use('/api/imagen', require('./api/imagen.js'))
 
 
 app.get('/', (req,res) => {
