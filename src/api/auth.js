@@ -6,7 +6,7 @@ router.use(require('express').static('src/views/static'))
 
 // auth logout
 router.get('/logout', (req,res) => {
-    // handle with passport
+    req.logout()
     res.redirect('/')
 })
 

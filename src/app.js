@@ -3,7 +3,8 @@ const passport = require('passport')
 const path = require('path')
 const app = express()
 
-require('dotenv')
+require('dotenv').config()
+require('./config/auth.config')
 
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
@@ -18,8 +19,9 @@ app.get('/', (req,res) => {
     res.render('home')
 })
 
-app.get('/profile', passport.authenticate('google', {failureRedirect:'/'}), (req,res) => {
-    console.log(req.params)
+app.get('/profile', passport.authenticate('google', {failureRedirecte:'/'}), (req,res) => {
+    if (!req.user) res.redirect('/')
+    console.log(req.user)
     res.render('profile', {user: req.user })
 })
 
