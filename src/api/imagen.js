@@ -21,16 +21,8 @@ async function genImage(ID) {
 }
 
 router.get('/:id', async (req,res) => {
-    res.set({'Content-Type': 'image/png'})
-
-    const image = await genImage(req.params.id)
-    
-    const path = `${__dirname}/cache/${req.params.id}.png`
-    
-    image.write(path, () => res.sendFile(path, () => fs.unlinkSync(path)))
-    // await image.write(path)
-    // await res.sendFile(path)
-    // await fs.unlinkSync(path)
+    const pic = await genImage(req.params.id)
+    pic.getBuffer('image/png', (e,b) => res.send(b))
 })
 
 module.exports = router
